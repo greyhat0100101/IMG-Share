@@ -1144,171 +1144,220 @@ body {
   .layout {
     flex-direction: column;
     height: auto;
+    min-height: 100vh;
   }
 
   .sidebar {
     width: 100%;
-    padding: 16px 12px;
-    max-height: 120px;
+    padding: 8px 10px;
+    max-height: 60px;
     flex-direction: row;
     overflow-x: auto;
     overflow-y: hidden;
     border-right: none;
     border-bottom: 1px solid rgba(148, 163, 184, 0.1);
-    gap: 12px;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
   }
 
   .logo-container {
     margin-bottom: 0;
-    padding: 8px 12px;
-    min-width: 140px;
+    padding: 6px 10px;
+    min-width: 130px;
+    flex-shrink: 0;
   }
 
   .logo-container i {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .logo {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .sidebar-top-section {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     overflow-x: auto;
     flex: 1;
     flex-wrap: nowrap;
+    min-width: 0;
+    padding: 0 4px;
   }
 
   .sidebar-bottom-section {
     padding-top: 0;
-    padding-left: 12px;
+    padding-left: 8px;
     border-top: none;
     border-left: 1px solid rgba(148, 163, 184, 0.1);
     margin-top: 0;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
   }
 
   .settings-btn {
-    min-width: 48px;
-    padding: 8px;
-    border-radius: 8px;
-    font-size: 14px;
+    min-width: 42px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 6px;
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
 
   .settings-btn i {
+    font-size: 18px;
     margin: 0;
   }
 
   .org-item {
-    min-width: 120px;
-    padding: 8px 12px;
-    font-size: 13px;
+    min-width: 100px;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .main {
     width: 100%;
-    padding: 12px;
+    padding: 10px 8px;
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .view-title {
-    font-size: 24px;
-    margin-bottom: 16px;
-    padding: 0 8px;
+    font-size: 22px;
+    margin-bottom: 12px;
+    padding: 0 4px;
+    flex-shrink: 0;
   }
 
   .content {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
     padding: 0;
+    flex: 1;
   }
 
-  /* Album Cards */
+  /* Album Cards - más grandes */
   .album-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 0;
   }
 
   .album-item {
     padding: 12px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
   }
 
   .album-item-header {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   .folder-icon {
-    font-size: 32px;
-    margin-bottom: 8px;
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-align: center;
   }
 
   .album-name {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.3;
     margin-bottom: 8px;
+    font-weight: 600;
   }
 
   .album-info {
     font-size: 12px;
-    gap: 6px;
+    gap: 8px;
+    margin-bottom: 10px;
   }
 
   .album-info span {
-    padding: 2px 6px;
+    padding: 3px 8px;
+    border-radius: 4px;
   }
 
   .album-btn-group {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6px;
-    margin-top: 8px;
+    margin-top: auto;
   }
 
   .album-btn-group button {
-    padding: 6px 8px;
-    font-size: 12px;
+    padding: 8px;
+    font-size: 11px;
     border-radius: 6px;
+    flex: 1;
   }
 
   /* Image Cards */
   .image-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 10px;
+    padding: 0;
   }
 
   .image-card {
     padding: 0;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
+  }
+
+  .image-preview {
+    min-height: 130px;
+    border-radius: 8px 8px 0 0;
   }
 
   .image-info {
-    padding: 8px;
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .image-name {
     font-size: 12px;
     margin-bottom: 6px;
+    font-weight: 600;
   }
 
   .image-size {
     font-size: 11px;
     color: #94a3b8;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
 
   .image-btns {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4px;
+    margin-top: auto;
   }
 
   .image-btns button {
-    padding: 4px 6px;
-    font-size: 11px;
+    padding: 6px;
+    font-size: 10px;
     border-radius: 4px;
+    cursor: pointer;
   }
 
   /* Organization Dropdown */
@@ -1328,20 +1377,22 @@ body {
   }
 
   .org-dropdown button {
-    padding: 8px 12px;
+    padding: 10px 12px;
     font-size: 13px;
     margin-bottom: 4px;
+    width: 100%;
+    text-align: left;
   }
 
   /* Modal */
   .modal {
-    padding: 12px;
+    padding: 10px;
   }
 
   .modal-box {
-    padding: 20px 16px;
+    padding: 18px 14px;
     border-radius: 12px;
-    max-width: 90vw;
+    max-width: 95vw;
     max-height: 90vh;
     overflow-y: auto;
   }
@@ -1354,6 +1405,7 @@ body {
   .modal-box input {
     font-size: 16px;
     padding: 12px;
+    width: 100%;
   }
 
   .modal-buttons {
@@ -1371,23 +1423,26 @@ body {
 
   /* Forms */
   .form-group {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .form-group label {
     font-size: 13px;
     margin-bottom: 6px;
+    font-weight: 600;
   }
 
   .form-group input {
     padding: 10px 12px;
     font-size: 16px;
     border-radius: 6px;
+    width: 100%;
   }
 
   .form-group small {
     font-size: 11px;
     margin-top: 4px;
+    display: block;
   }
 
   /* Buttons */
@@ -1402,24 +1457,28 @@ body {
     padding: 10px 16px;
     font-size: 14px;
     border-radius: 6px;
+    min-height: 44px;
   }
 
   /* Settings */
   .settings-container {
     max-width: 100%;
-    padding: 12px;
+    padding: 0;
   }
 
   .settings-tabs {
-    gap: 8px;
+    gap: 6px;
     padding-bottom: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   .tab-btn {
     padding: 8px 12px;
     font-size: 12px;
     gap: 4px;
+    flex: 1;
   }
 
   .tab-btn i {
@@ -1427,8 +1486,9 @@ body {
   }
 
   .settings-card {
-    padding: 16px;
+    padding: 14px;
     border-radius: 10px;
+    margin: 0 8px;
   }
 
   .settings-card h3 {
@@ -1437,74 +1497,165 @@ body {
   }
 
   .settings-description {
-    font-size: 13px;
-    margin-bottom: 16px;
+    font-size: 12px;
+    margin-bottom: 14px;
+    line-height: 1.4;
   }
 }
 
 @media (max-width: 480px) {
   .sidebar {
-    max-height: 100px;
-    padding: 12px 8px;
+    max-height: 56px;
+    padding: 6px 8px;
+    gap: 6px;
   }
 
   .logo-container {
-    min-width: 120px;
-    padding: 6px 8px;
-    margin-bottom: 0;
+    min-width: 110px;
+    padding: 4px 8px;
   }
 
   .logo-container i {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .logo {
+    font-size: 14px;
+  }
+
+  .sidebar-top-section {
+    gap: 4px;
+    padding: 0 2px;
+  }
+
+  .settings-btn {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .settings-btn i {
     font-size: 16px;
+  }
+
+  .org-item {
+    min-width: 90px;
+    padding: 5px 8px;
+    font-size: 11px;
   }
 
   .view-title {
     font-size: 20px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
+  .content {
+    gap: 8px;
+  }
+
+  /* Album Cards - más grandes para iPhone */
   .album-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
   }
 
-  .image-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  .album-item {
+    padding: 10px;
+    min-height: 170px;
   }
 
   .folder-icon {
-    font-size: 28px;
+    font-size: 32px;
+    margin-bottom: 8px;
   }
 
   .album-name {
-    font-size: 12px;
+    font-size: 13px;
+  }
+
+  .album-info {
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .album-info span {
+    padding: 2px 6px;
   }
 
   .album-btn-group {
-    grid-template-columns: 1fr;
+    gap: 5px;
+    margin-top: auto;
+  }
+
+  .album-btn-group button {
+    padding: 6px;
+    font-size: 11px;
+  }
+
+  /* Image Cards */
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 8px;
+  }
+
+  .image-card {
+    min-height: 160px;
+  }
+
+  .image-preview {
+    min-height: 110px;
+  }
+
+  .image-info {
+    padding: 8px;
+  }
+
+  .image-name {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
+  .image-size {
+    font-size: 10px;
+    margin-bottom: 4px;
   }
 
   .image-btns {
-    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .image-btns button {
+    padding: 5px;
+    font-size: 10px;
   }
 
   .modal-box {
-    padding: 16px 12px;
+    padding: 14px 12px;
   }
 
   .form-group input {
-    font-size: 16px;
     padding: 10px;
+    font-size: 16px;
   }
 
   .settings-card {
     padding: 12px;
+    margin: 0 6px;
   }
 
-  .button-group {
-    grid-template-columns: 1fr;
+  .settings-card h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .settings-description {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  button {
+    min-height: 42px;
+    padding: 8px 12px;
+    font-size: 13px;
   }
 }
