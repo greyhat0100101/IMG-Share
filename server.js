@@ -28,13 +28,31 @@ app.use(notFound);
 app.use(errorHandler);
 
 async function boot() {
-  await connectDB();
-  await connectRedis();
+  try {
+    console.log('🔌 Conectando a MongoDB...');
+    await connectDB();
+    console.log('✅ MongoDB conectado');
+  } catch (error) {
+    console.error('❌ Error conectando a MongoDB:', error.message);
+    // No salir si MongoDB falla, continuar sin cache
+  }
+
+  try {
+    console.log('🔌 Conectando a Redis...');
+    await connectRedis();
+    console.log('✅ Redis conectado');
+  } catch (error) {
+    console.warn('⚠️ Redis no disponible, continuando sin cache:', error.message);
+    // No salir si Redis falla, es opcional
+  }
+
   const port = process.env.PORT || 3000;
-  app.listen(port, () => console.log(`🚀 Servidor en http://localhost:${port}`));
+  app.listen(port, () => {
+    console.log(`🚀 Servidor escuchando en puerto ${port}`);
+  });
 }
 
 boot().catch((err) => {
-  console.error('No se pudo iniciar:', err);
+  console.error('❌ Error fatal:', err);
   process.exit(1);
 });
