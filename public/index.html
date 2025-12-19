@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>IMG-Share</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo-container">
+      <i class="fas fa-images"></i>
+      <h1 class="logo">IMG-Share</h1>
+    </div>
+
+    <div class="sidebar-top-section">
+      <div class="section">
+        <h3 class="section-title">
+          <i class="fas fa-building"></i> Organizaciones
+        </h3>
+
+        <div class="create-row">
+          <input id="orgName" placeholder="Nueva organización" />
+          <button id="btnCreateOrg" title="Crear organización">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+
+        <ul id="orgList" class="org-list"></ul>
+      </div>
+    </div>
+
+    <div class="sidebar-bottom-section">
+      <button id="btnSettings" class="settings-btn" title="Configuración">
+        <i class="fas fa-cog"></i> Configuración
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <header class="header">
+      <h2 id="viewTitle">Organizaciones</h2>
+    </header>
+
+    <section id="content" class="content"></section>
+
+  </main>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal hidden"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
